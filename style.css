@@ -17,6 +17,7 @@
   font-size: 62.5%;
   --fs-body: 1.6rem;
   --fs-heading: 4rem; 
+  --fs--hover: 1.8rem;
 }
 
 body {
@@ -79,6 +80,13 @@ main {
   object-fit: cover;
 
   border-radius: 6px;
+  
+  transition: all 200ms;
+}
+
+.card img:hover {
+  transform: scale(1.1);
+  opacity: 0.4;
 }
 
 .card h2 {
@@ -107,4 +115,56 @@ main {
   display: inline-flex;
   align-items: center;
   width: fit-content;
+
+  transition: all 200ms;
+}
+
+header {
+  animation-name: topdown;
+  animation-duration: 400ms;
+}
+
+main {
+  animation: downtop 700ms 350ms backwards;
+}
+
+/* .card h2 span:hover {
+  transform:scaleX(1.1);
+  transform-origin: left;
+  font-size: var(--fs--hover);
+
+  border: 1px solid var(--bg-primary);
+} */
+
+@keyframes topdown {
+  0% {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes downtop {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
